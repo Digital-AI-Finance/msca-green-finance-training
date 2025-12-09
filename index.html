@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSCA DIGITAL Finance - Welcome Address</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/night.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --eu-blue: #003399;
+            --eu-yellow: #FFCC00;
+            --accent-green: #00b894;
+            --accent-purple: #6c5ce7;
+            --light-bg: #f8f9fa;
+        }
+
+        .reveal {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: none;
+        }
+
+        .reveal h1 {
+            font-size: 2.2em;
+            background: linear-gradient(135deg, var(--eu-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .reveal h2 {
+            font-size: 1.6em;
+            color: var(--eu-yellow);
+        }
+
+        .reveal h3 {
+            font-size: 1.2em;
+            color: var(--accent-green);
+        }
+
+        .reveal .slides section {
+            text-align: left;
+        }
+
+        /* Title slide */
+        .title-slide {
+            text-align: center !important;
+        }
+
+        .title-slide h1 {
+            font-size: 2.8em !important;
+            margin-bottom: 0.3em;
+            background: linear-gradient(135deg, #fff, var(--eu-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.4em;
+            color: var(--accent-green);
+            margin-bottom: 1em;
+        }
+
+        .title-slide .author {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-top: 1.5em;
+        }
+
+        .title-slide .institution {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .title-slide .date-location {
+            font-size: 1em;
+            color: var(--eu-yellow);
+            margin-top: 1.5em;
+            padding: 0.5em 1em;
+            border: 2px solid var(--eu-yellow);
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        /* EU funding badge */
+        .eu-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.6em;
+            z-index: 100;
+        }
+
+        .eu-flag {
+            width: 40px;
+            height: 27px;
+            background: var(--eu-blue);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .eu-stars {
+            color: var(--eu-yellow);
+            font-size: 14px;
+        }
+
+        /* Cards for partners */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .partner-card {
+            background: linear-gradient(135deg, rgba(0,51,153,0.3), rgba(108,92,231,0.3));
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid var(--eu-yellow);
+        }
+
+        .partner-card h3 {
+            margin-top: 0;
+            font-size: 1em;
+        }
+
+        .partner-card ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.75em;
+            line-height: 1.6;
+        }
+
+        /* Topic pills */
+        .topic-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .topic-pill {
+            background: linear-gradient(135deg, var(--eu-blue), var(--accent-purple));
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .topic-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(108,92,231,0.4);
+        }
+
+        .topic-pill.green {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+        }
+
+        .topic-pill.gold {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+        }
+
+        /* Stats section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 25px 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255,204,0,0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--eu-yellow);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.75em;
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        /* Network connections */
+        .network-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .network-list li {
+            padding: 15px 20px;
+            margin: 10px 0;
+            background: linear-gradient(90deg, rgba(0,184,148,0.2), transparent);
+            border-left: 4px solid var(--accent-green);
+            border-radius: 0 10px 10px 0;
+            font-size: 0.9em;
+        }
+
+        .network-list .highlight {
+            color: var(--eu-yellow);
+            font-weight: 600;
+        }
+
+        /* Award section */
+        .award-box {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(243,156,18,0.2), rgba(231,76,60,0.2));
+            border-radius: 20px;
+            border: 2px solid var(--eu-yellow);
+            margin: 30px 0;
+        }
+
+        .award-amount {
+            font-size: 4em;
+            font-weight: 700;
+            color: var(--eu-yellow);
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 0 30px rgba(255,204,0,0.5);
+        }
+
+        .award-title {
+            font-size: 1.3em;
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* Course cards */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .course-card {
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .course-card.primary {
+            background: linear-gradient(135deg, var(--eu-blue), var(--accent-purple));
+        }
+
+        .course-card.secondary {
+            background: linear-gradient(135deg, var(--accent-green), #00cec9);
+        }
+
+        .course-ects {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: white;
+        }
+
+        .course-name {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.9);
+            margin-top: 10px;
+        }
+
+        /* Thank you slide */
+        .thank-you-slide {
+            text-align: center !important;
+        }
+
+        .thank-you-slide h2 {
+            font-size: 2.5em !important;
+            background: linear-gradient(135deg, var(--eu-yellow), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .host-name {
+            font-size: 1.8em;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .host-institution {
+            font-size: 1.2em;
+            color: var(--accent-green);
+        }
+
+        .welcome-message {
+            font-size: 1.5em;
+            color: var(--eu-yellow);
+            margin-top: 50px;
+            padding: 20px 40px;
+            border: 3px solid var(--eu-yellow);
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* Animations */
+        .reveal .slides section .fragment.grow-in {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .reveal .slides section .fragment.grow-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Progress bar */
+        .reveal .progress {
+            background: rgba(255,255,255,0.1);
+            height: 4px;
+        }
+
+        .reveal .progress span {
+            background: linear-gradient(90deg, var(--eu-yellow), var(--accent-green));
+        }
+
+        /* Slide numbers */
+        .reveal .slide-number {
+            font-size: 14px;
+            color: var(--eu-yellow);
+        }
+    </style>
+</head>
+<body>
+    <!-- EU Funding Badge -->
+    <div class="eu-badge">
+        <div class="eu-flag">
+            <span class="eu-stars">*</span>
+        </div>
+        <span>Funded by the European Union | HORIZON-MSCA-2022-DN-01</span>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Title Slide -->
+            <section class="title-slide" data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)">
+                <h1>MSCA DIGITAL Finance</h1>
+                <div class="subtitle">Training Week: History and Prospects of Digital Finance</div>
+                <div class="author">Prof. Dr. Joerg Osterrieder</div>
+                <div class="institution">Scientific Coordinator | University of Twente & Bern Business School</div>
+                <div class="date-location">Naples, December 9-10, 2025</div>
+            </section>
+
+            <!-- Welcome Slide -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+                <h2>Welcome to Naples</h2>
+                <div class="stats-grid">
+                    <div class="stat-card fragment" data-fragment-index="1">
+                        <div class="stat-number">17</div>
+                        <div class="stat-label">Early Stage Researchers</div>
+                    </div>
+                    <div class="stat-card fragment" data-fragment-index="2">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Partner Universities</div>
+                    </div>
+                    <div class="stat-card fragment" data-fragment-index="3">
+                        <div class="stat-number">13</div>
+                        <div class="stat-label">Industry Partners</div>
+                    </div>
+                    <div class="stat-card fragment" data-fragment-index="4">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Years (2024-2027)</div>
+                    </div>
+                </div>
+                <p style="text-align: center; font-style: italic; color: #888; margin-top: 30px;">
+                    "Bridging cutting-edge academic research and real-world financial innovation"
+                </p>
+            </section>
+
+            <!-- Network Partners -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+                <h2>The DIGITAL Network</h2>
+                <div class="partner-grid">
+                    <div class="partner-card fragment">
+                        <h3>Leading Universities</h3>
+                        <ul>
+                            <li>WU Vienna University</li>
+                            <li>Humboldt-Universitat zu Berlin</li>
+                            <li>University of Twente</li>
+                            <li>University of Naples</li>
+                            <li>Bern Business School</li>
+                            <li>Kaunas University of Technology</li>
+                            <li>Bucharest & Babes-Bolyai</li>
+                        </ul>
+                    </div>
+                    <div class="partner-card fragment">
+                        <h3>Industry Leaders</h3>
+                        <ul>
+                            <li>Deutsche Bank</li>
+                            <li>Intesa Sanpaolo</li>
+                            <li>European Central Bank</li>
+                            <li>Bank for International Settlements</li>
+                            <li>Deloitte</li>
+                            <li>Swedbank & Raiffeisen</li>
+                            <li>Cardo AI, Royalton Partners</li>
+                        </ul>
+                    </div>
+                    <div class="partner-card fragment">
+                        <h3>Research Centers</h3>
+                        <ul>
+                            <li>Athena Research Center</li>
+                            <li>EIT Digital</li>
+                            <li>Fraunhofer Institute</li>
+                        </ul>
+                    </div>
+                    <div class="partner-card fragment">
+                        <h3>Research Networks</h3>
+                        <ul>
+                            <li>COST Action Fin-AI (4,500+ researchers)</li>
+                            <li>European Consortium of Mathematics for Industry</li>
+                            <li>European Consortium of Innovative Universities</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Topics -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+                <h2>Diversity of Research Topics</h2>
+                <div class="topic-container">
+                    <div class="topic-pill fragment">AI & Machine Learning</div>
+                    <div class="topic-pill fragment">Explainable AI (XAI)</div>
+                    <div class="topic-pill green fragment">Sustainable Finance</div>
+                    <div class="topic-pill green fragment">Green AI</div>
+                    <div class="topic-pill gold fragment">Blockchain Applications</div>
+                    <div class="topic-pill fragment">NLP for Financial Text</div>
+                    <div class="topic-pill fragment">Agent-Based Modeling</div>
+                    <div class="topic-pill gold fragment">Data Quality</div>
+                    <div class="topic-pill green fragment">European Financial Data Space</div>
+                    <div class="topic-pill fragment">Deep Learning Trading</div>
+                </div>
+                <p style="text-align: center; margin-top: 40px; color: #aaa;">
+                    Each ESR represents a unique piece of this puzzle
+                </p>
+            </section>
+
+            <!-- Research Progress -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+                <h2>Research Progress & Connections</h2>
+                <ul class="network-list">
+                    <li class="fragment">
+                        Connected to <span class="highlight">COST Action Fin-AI</span> with 4,500+ researchers across 39 European countries
+                    </li>
+                    <li class="fragment">
+                        Partnership with <span class="highlight">European Consortium of Mathematics for Industry</span> - 200 researchers
+                    </li>
+                    <li class="fragment">
+                        Member of <span class="highlight">European Consortium of Innovative Universities</span> - 13 leading institutions
+                    </li>
+                    <li class="fragment">
+                        ESRs presenting at conferences, publishing papers, engaging with real industry challenges
+                    </li>
+                    <li class="fragment">
+                        <span class="highlight">18-month industry secondments</span> + 4-month research center placements
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Poster Award -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)">
+                <h2>Best Student Poster Award</h2>
+                <div class="award-box fragment">
+                    <div class="award-amount">500</div>
+                    <div class="award-title">Euro Prize</div>
+                </div>
+                <p style="text-align: center; font-size: 1.1em; color: #ccc;">
+                    Recognizing <strong style="color: var(--eu-yellow);">scientific excellence</strong> and
+                    <strong style="color: var(--accent-green);">creativity in communication</strong>
+                </p>
+                <p style="text-align: center; font-size: 1em; color: #888; margin-top: 30px;">
+                    Announcement: Social Dinner, December 10th
+                </p>
+            </section>
+
+            <!-- This Week -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+                <h2>This Training Week</h2>
+                <div class="course-grid">
+                    <div class="course-card primary fragment">
+                        <div class="course-ects">3 ECTS</div>
+                        <div class="course-name">History and Prospects<br>of Digital Finance</div>
+                    </div>
+                    <div class="course-card secondary fragment">
+                        <div class="course-ects">1 ECTS</div>
+                        <div class="course-name">Environmental Aspects<br>& Sustainable Finance</div>
+                    </div>
+                </div>
+                <ul class="network-list" style="margin-top: 40px;">
+                    <li class="fragment">Build relationships with fellow ESRs and supervisors</li>
+                    <li class="fragment">Explore the remarkable city of Naples</li>
+                    <li class="fragment">Visit the Renaissance complex of Sant'Anna dei Lombardi</li>
+                </ul>
+            </section>
+
+            <!-- Thank You -->
+            <section class="thank-you-slide" data-background="linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)">
+                <h2>Special Thanks</h2>
+                <div class="host-name">Professor Maria Iannario</div>
+                <div class="host-institution">University of Naples Federico II</div>
+                <p style="color: #888; margin-top: 20px;">
+                    and the entire organizing team for hosting this training week
+                </p>
+                <div class="welcome-message fragment">
+                    Welcome to MSCA DIGITAL Finance!
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: false,
+            width: 1280,
+            height: 720,
+            margin: 0.1,
+            progress: true,
+            controls: true,
+            controlsTutorial: true,
+            keyboard: true,
+            overview: true,
+            touch: true
+        });
+    </script>
+</body>
+</html>
