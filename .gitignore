@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# Except GitHub Pages files
+!index.html
+!.gitignore
