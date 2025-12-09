@@ -285,6 +285,61 @@
             margin-top: 10px;
         }
 
+        /* Schedule styles */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .schedule-day {
+            background: linear-gradient(135deg, rgba(0,51,153,0.3), rgba(108,92,231,0.2));
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--eu-yellow);
+        }
+
+        .schedule-day .day-name {
+            color: var(--eu-yellow);
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .schedule-day .day-topic {
+            color: #ccc;
+            font-size: 0.85em;
+        }
+
+        /* ESR Grid */
+        .esr-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .esr-card {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255,204,0,0.2);
+            font-size: 0.7em;
+        }
+
+        .esr-card .esr-name {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .esr-card .esr-uni {
+            color: var(--accent-green);
+            font-size: 0.85em;
+        }
+
         /* Thank you slide */
         .thank-you-slide {
             text-align: center !important;
@@ -345,6 +400,33 @@
             font-size: 14px;
             color: var(--eu-yellow);
         }
+
+        /* Social activities */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-card {
+            background: linear-gradient(135deg, rgba(243,156,18,0.2), rgba(231,76,60,0.1));
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--eu-yellow);
+        }
+
+        .social-card h3 {
+            margin-top: 0;
+            font-size: 0.95em;
+            color: var(--eu-yellow);
+        }
+
+        .social-card p {
+            font-size: 0.8em;
+            color: #bbb;
+            margin: 10px 0 0 0;
+        }
     </style>
 </head>
 <body>
@@ -364,8 +446,8 @@
                 <h1>MSCA DIGITAL Finance</h1>
                 <div class="subtitle">Training Week: History and Prospects of Digital Finance</div>
                 <div class="author">Prof. Dr. Joerg Osterrieder</div>
-                <div class="institution">Scientific Coordinator | University of Twente & Bern Business School</div>
-                <div class="date-location">Naples, December 9-10, 2025</div>
+                <div class="institution">Coordinator | University of Twente & Bern Business School</div>
+                <div class="date-location">Naples, December 9-12, 2025</div>
             </section>
 
             <!-- Welcome Slide -->
@@ -374,7 +456,7 @@
                 <div class="stats-grid">
                     <div class="stat-card fragment" data-fragment-index="1">
                         <div class="stat-number">17</div>
-                        <div class="stat-label">Early Stage Researchers</div>
+                        <div class="stat-label">Doctoral Candidates</div>
                     </div>
                     <div class="stat-card fragment" data-fragment-index="2">
                         <div class="stat-number">8</div>
@@ -394,6 +476,32 @@
                 </p>
             </section>
 
+            <!-- Our Doctoral Candidates -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+                <h2>Our 17 Doctoral Candidates</h2>
+                <div class="esr-grid">
+                    <div class="esr-card fragment"><div class="esr-name">Mathis Jander</div><div class="esr-uni">Twente</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">Armin Sadighi</div><div class="esr-uni">Twente</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">Manuele Massei</div><div class="esr-uni">Twente</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">Mohamed Faid</div><div class="esr-uni">Twente</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">Patricia Evite</div><div class="esr-uni">Naples</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">Ismail Elbouknify</div><div class="esr-uni">Naples</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 7</div><div class="esr-uni">Vienna</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 8</div><div class="esr-uni">Bucharest</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 9</div><div class="esr-uni">Humboldt</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 10</div><div class="esr-uni">Bern</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 11</div><div class="esr-uni">Kaunas</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 12</div><div class="esr-uni">Babes-Bolyai</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 13</div><div class="esr-uni">Vienna</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 14</div><div class="esr-uni">Bucharest</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 15</div><div class="esr-uni">Naples</div></div>
+                    <div class="esr-card fragment"><div class="esr-name">DC 16</div><div class="esr-uni">Humboldt</div></div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
+                    Plus DC 17 - The future of Digital Finance
+                </p>
+            </section>
+
             <!-- Network Partners -->
             <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
                 <h2>The DIGITAL Network</h2>
@@ -404,7 +512,7 @@
                             <li>WU Vienna University</li>
                             <li>Humboldt-Universitat zu Berlin</li>
                             <li>University of Twente</li>
-                            <li>University of Naples</li>
+                            <li>University of Naples Federico II</li>
                             <li>Bern Business School</li>
                             <li>Kaunas University of Technology</li>
                             <li>Bucharest & Babes-Bolyai</li>
@@ -457,8 +565,35 @@
                     <div class="topic-pill fragment">Deep Learning Trading</div>
                 </div>
                 <p style="text-align: center; margin-top: 40px; color: #aaa;">
-                    Each ESR represents a unique piece of this puzzle
+                    Each Doctoral Candidate represents a unique piece of this puzzle
                 </p>
+            </section>
+
+            <!-- Training Week Schedule -->
+            <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
+                <h2>Training Week Programme</h2>
+                <p style="color: #aaa; margin-bottom: 10px;">4 ECTS | University of Naples Federico II</p>
+                <div class="schedule-grid">
+                    <div class="schedule-day fragment">
+                        <div class="day-name">Tuesday, Dec 9</div>
+                        <div class="day-topic">Environmental Aspects</div>
+                    </div>
+                    <div class="schedule-day fragment">
+                        <div class="day-name">Wednesday, Dec 10</div>
+                        <div class="day-topic">History and Prospects of Digital Finance</div>
+                    </div>
+                    <div class="schedule-day fragment">
+                        <div class="day-name">Thursday, Dec 11</div>
+                        <div class="day-topic">Innovation and Digital Transformation</div>
+                    </div>
+                    <div class="schedule-day fragment">
+                        <div class="day-name">Friday, Dec 12</div>
+                        <div class="day-topic">Regulation and Future Perspectives</div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; text-align: center;">
+                    <span style="color: var(--accent-green); font-size: 0.9em;">Poster Session running throughout the week</span>
+                </div>
             </section>
 
             <!-- Research Progress -->
@@ -475,7 +610,7 @@
                         Member of <span class="highlight">European Consortium of Innovative Universities</span> - 13 leading institutions
                     </li>
                     <li class="fragment">
-                        ESRs presenting at conferences, publishing papers, engaging with real industry challenges
+                        DCs presenting at conferences, publishing papers, engaging with real industry challenges
                     </li>
                     <li class="fragment">
                         <span class="highlight">18-month industry secondments</span> + 4-month research center placements
@@ -490,33 +625,37 @@
                     <div class="award-amount">500</div>
                     <div class="award-title">Euro Prize</div>
                 </div>
-                <p style="text-align: center; font-size: 1.1em; color: #ccc;">
+                <p style="text-align: center; font-size: 1em; color: #ccc;">
                     Recognizing <strong style="color: var(--eu-yellow);">scientific excellence</strong> and
                     <strong style="color: var(--accent-green);">creativity in communication</strong>
                 </p>
-                <p style="text-align: center; font-size: 1em; color: #888; margin-top: 30px;">
+                <p style="text-align: center; font-size: 0.9em; color: #888; margin-top: 20px;">
+                    Format: A0 portrait (84.1 x 118.9 cm) | Evaluated by Scientific Committee
+                </p>
+                <p style="text-align: center; font-size: 1em; color: var(--eu-yellow); margin-top: 20px;">
                     Announcement: Social Dinner, December 10th
                 </p>
             </section>
 
-            <!-- This Week -->
+            <!-- Social Activities -->
             <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
-                <h2>This Training Week</h2>
-                <div class="course-grid">
-                    <div class="course-card primary fragment">
-                        <div class="course-ects">3 ECTS</div>
-                        <div class="course-name">History and Prospects<br>of Digital Finance</div>
+                <h2>Social Activities</h2>
+                <div class="social-grid">
+                    <div class="social-card fragment">
+                        <h3>Complesso di Sant'Anna dei Lombardi</h3>
+                        <p>December 10 - Departure 17:30</p>
+                        <p>One of Naples' most remarkable Renaissance complexes featuring artworks by Vasari and da Maiano</p>
                     </div>
-                    <div class="course-card secondary fragment">
-                        <div class="course-ects">1 ECTS</div>
-                        <div class="course-name">Environmental Aspects<br>& Sustainable Finance</div>
+                    <div class="social-card fragment">
+                        <h3>"Non e vero ma ci credo"</h3>
+                        <p>Cultural Superstitions Tour</p>
+                        <p>Explore Naples' fascinating cultural traditions and local beliefs</p>
                     </div>
                 </div>
-                <ul class="network-list" style="margin-top: 40px;">
-                    <li class="fragment">Build relationships with fellow ESRs and supervisors</li>
-                    <li class="fragment">Explore the remarkable city of Naples</li>
-                    <li class="fragment">Visit the Renaissance complex of Sant'Anna dei Lombardi</li>
-                </ul>
+                <div style="margin-top: 40px; text-align: center;">
+                    <p style="color: var(--eu-yellow); font-size: 1.1em;">Social Dinner - December 10th</p>
+                    <p style="color: #888; font-size: 0.9em;">Best Poster Award Announcement</p>
+                </div>
             </section>
 
             <!-- Thank You -->
