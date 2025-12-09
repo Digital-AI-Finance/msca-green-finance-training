@@ -427,6 +427,183 @@
             color: #bbb;
             margin: 10px 0 0 0;
         }
+
+        /* ========== GREEN FINANCE VISUAL EFFECTS ========== */
+
+        /* Floating particles container */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            bottom: -20px;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(0,184,148,0.4) 0%, rgba(0,184,148,0) 70%);
+            border-radius: 50%;
+            animation: float-up linear infinite;
+        }
+
+        .particle.leaf {
+            width: 12px;
+            height: 12px;
+            background: none;
+            border-radius: 0;
+        }
+
+        .particle.leaf::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,184,148,0.3), rgba(0,206,201,0.2));
+            border-radius: 0 70% 0 70%;
+            transform: rotate(45deg);
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-750px) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Animated gradient background */
+        .green-gradient-bg {
+            background: linear-gradient(135deg,
+                #1a1a2e 0%,
+                #16213e 25%,
+                #0f3460 50%,
+                #1a3a2e 75%,
+                #1a1a2e 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 45s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Green glow pulse for topic pills */
+        .topic-pill.green {
+            animation: green-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes green-pulse {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(0,184,148,0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(0,184,148,0.6), 0 0 30px rgba(0,206,201,0.3);
+            }
+        }
+
+        /* CSS 3D Globe */
+        .eco-globe {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 30% 30%,
+                    rgba(0,184,148,0.1) 0%,
+                    rgba(0,51,153,0.2) 50%,
+                    rgba(15,52,96,0.4) 100%);
+            box-shadow:
+                inset -20px -20px 40px rgba(0,0,0,0.4),
+                inset 10px 10px 30px rgba(0,184,148,0.1),
+                0 0 40px rgba(0,184,148,0.15);
+            animation: globe-rotate 60s linear infinite;
+            overflow: hidden;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .eco-globe::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse 30% 40% at 20% 30%, rgba(0,184,148,0.4) 0%, transparent 50%),
+                radial-gradient(ellipse 25% 35% at 60% 50%, rgba(0,184,148,0.3) 0%, transparent 50%),
+                radial-gradient(ellipse 20% 30% at 75% 70%, rgba(0,184,148,0.35) 0%, transparent 50%),
+                radial-gradient(ellipse 35% 25% at 40% 75%, rgba(0,184,148,0.25) 0%, transparent 50%);
+            animation: continents-drift 60s linear infinite;
+        }
+
+        .eco-globe::after {
+            content: '';
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            width: 30%;
+            height: 20%;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        @keyframes globe-rotate {
+            0% { transform: translateY(-50%) rotateY(0deg); }
+            100% { transform: translateY(-50%) rotateY(360deg); }
+        }
+
+        @keyframes continents-drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50px); }
+        }
+
+        /* Environmental card special styling */
+        .env-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .env-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,184,148,0.1) 0%, transparent 50%);
+            animation: env-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes env-glow {
+            0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+            50% { transform: translate(10%, 10%); opacity: 0.8; }
+        }
+
+        /* Ensure content stays above particles */
+        .title-slide > *, .thank-you-slide > * {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -442,7 +619,22 @@
         <div class="slides">
 
             <!-- Title Slide -->
-            <section class="title-slide" data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)">
+            <section class="title-slide green-gradient-bg">
+                <!-- Floating Particles -->
+                <div class="particles-container">
+                    <div class="particle" style="left: 5%; animation-duration: 12s; animation-delay: 0s;"></div>
+                    <div class="particle leaf" style="left: 15%; animation-duration: 15s; animation-delay: 2s;"></div>
+                    <div class="particle" style="left: 25%; animation-duration: 11s; animation-delay: 4s;"></div>
+                    <div class="particle leaf" style="left: 35%; animation-duration: 14s; animation-delay: 1s;"></div>
+                    <div class="particle" style="left: 45%; animation-duration: 13s; animation-delay: 3s;"></div>
+                    <div class="particle" style="left: 55%; animation-duration: 12s; animation-delay: 5s;"></div>
+                    <div class="particle leaf" style="left: 65%; animation-duration: 16s; animation-delay: 0s;"></div>
+                    <div class="particle" style="left: 75%; animation-duration: 11s; animation-delay: 2s;"></div>
+                    <div class="particle leaf" style="left: 85%; animation-duration: 14s; animation-delay: 4s;"></div>
+                    <div class="particle" style="left: 95%; animation-duration: 13s; animation-delay: 1s;"></div>
+                </div>
+                <!-- CSS Globe -->
+                <div class="eco-globe"></div>
                 <h1>MSCA DIGITAL Finance</h1>
                 <div class="subtitle">Training Week: History and Prospects of Digital Finance</div>
                 <div class="author">Prof. Dr. Joerg Osterrieder</div>
@@ -571,7 +763,7 @@
             <section data-background="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)">
                 <h2>Course Content</h2>
                 <div class="partner-grid" style="gap: 15px; margin-top: 15px;">
-                    <div class="partner-card fragment" style="padding: 15px;">
+                    <div class="partner-card env-card fragment" style="padding: 15px; border-left-color: var(--accent-green);">
                         <h3 style="font-size: 0.85em; margin-bottom: 8px; color: var(--accent-green);">Environmental Aspects</h3>
                         <ul style="font-size: 0.65em; line-height: 1.5;">
                             <li>Sustainability Framework</li>
@@ -715,7 +907,18 @@
             </section>
 
             <!-- Thank You -->
-            <section class="thank-you-slide" data-background="linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)">
+            <section class="thank-you-slide green-gradient-bg">
+                <!-- Floating Particles -->
+                <div class="particles-container">
+                    <div class="particle" style="left: 8%; animation-duration: 14s; animation-delay: 0s;"></div>
+                    <div class="particle leaf" style="left: 20%; animation-duration: 16s; animation-delay: 3s;"></div>
+                    <div class="particle" style="left: 32%; animation-duration: 12s; animation-delay: 1s;"></div>
+                    <div class="particle leaf" style="left: 44%; animation-duration: 15s; animation-delay: 4s;"></div>
+                    <div class="particle" style="left: 56%; animation-duration: 13s; animation-delay: 2s;"></div>
+                    <div class="particle leaf" style="left: 68%; animation-duration: 14s; animation-delay: 0s;"></div>
+                    <div class="particle" style="left: 80%; animation-duration: 11s; animation-delay: 3s;"></div>
+                    <div class="particle leaf" style="left: 92%; animation-duration: 15s; animation-delay: 1s;"></div>
+                </div>
                 <h2>Special Thanks</h2>
                 <div class="host-name">Professor Maria Iannario</div>
                 <div class="host-institution">University of Naples Federico II</div>
